@@ -1,0 +1,178 @@
+/* =============== universal style for all same
+                  applies to all screen sizes   Removes default spacing browsers add. =============== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*  Makes all images fully responsive.
+
+width: 100% forces image to fill its container.
+
+max-width: 100% prevents the image from growing larger than its natural or parent size. This allows for flexibility.
+  */
+img {
+  /* max-width: 100%; */
+  width: 100%;
+  height: auto;
+  /* display: block; */
+  /* height: auto;  height: auto: keeps image ratio.*/
+}
+
+/* =============== MOBILE-FIRST STYLE =============== */
+
+/* Header and Footer background  */
+.bluebg {
+  width: 100%;
+  padding: 20px;
+  background-color: #195774;
+  color: white;
+  display: flex; /*display: flex creates a flexbox layout.*/
+  flex-direction: column; /* stacks items vertically on mobile.*/
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* height: auto; */
+}
+
+/* Banner section */
+/* Adds spacing below banner.
+ */
+.banner {
+  margin-bottom: 40px;
+}
+/* Ensures banner image fills full width. */
+
+/* .banner img {
+  width: 100%;
+} */
+
+/* Puppy section for mobile    
+Stacks puppy images vertically in mobile view.
+gap: space between items. 
+
+*/
+.puppies {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* margin: 20px auto; */
+  align-items: center;
+  gap: 20px;
+  padding: 1.5rem;
+}
+
+/* Puppy images */
+.puppies > div {
+  width: 100%;
+  height: auto;
+
+  /* width: 310px; */
+}
+
+/* Missing puppy center box */
+.missing-puppies {
+  display: none;
+}
+/* background-color: #EE4D65; */
+/* width: 310px;
+  margin: 20px auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+
+/* More Puppies section */
+.more {
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+  padding: 20px;
+}
+
+/* Footer section */
+footer {
+  margin-top: 30px;
+  padding: 40px 20px;
+  background-color: #195774;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+footer h3 {
+  font-size: 30px;
+}
+
+/* Header h3 (used inside .bluebg) */
+header h3 {
+  font-size: 50px;
+}
+
+/* =============== DESKTOP/TABLET STYLES (min-width: 768px) =============== */
+
+@media (min-width: 768px) {
+  /* Horizontal puppy layout for larger screens */
+  .puppies {
+    flex-direction: row;
+    /* justify-content: space-between;
+    width: 960px;
+    margin: 30px auto; */
+  }
+  /* .puppies div img {
+    /* width: 310px; */
+  /* max-width: 100%; */
+
+  /* Fixed size for missing puppy box */
+  .missing-puppies {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    /* display: none; */
+    background-color: #ee4d65;
+    /* width: 310px; */
+    height: 310px;
+    /* margin: 20px auto; */
+
+    box-sizing: border-box;
+  }
+  /* .missing-puppies {
+    width: 310px;
+    height: 310px;
+    padding: 0;
+  } */
+
+  .missing-puppies p {
+    font-size: 50px;
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* Header/Footer layout side by side for larger screens */
+  .bluebg {
+    max-width: 100%;
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    padding: 60px;
+  }
+
+  .more {
+    font-size: 40px;
+  }
+
+  footer h3 {
+    font-size: 50px;
+  }
+
+  footer {
+    width: 100%;
+    margin-top: 55px;
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
+}
